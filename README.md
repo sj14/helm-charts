@@ -1,1 +1,1 @@
-See [sftp-server](/sftp-server)
+See [charts/sftp-server](/charts/sftp-server)

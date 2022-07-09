@@ -24,3 +24,4 @@
 #############
 .helmignore
 README.md.gotmpl
+tests

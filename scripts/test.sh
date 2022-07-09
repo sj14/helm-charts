@@ -4,10 +4,11 @@ set -o errexit
 set -o pipefail
 set -o errtrace
 
+for dir in charts/*; do
+	cd "$dir/tests/values"
 
-cd "tests/values"
-
-for file in *yaml; do
-	echo "helm ${file}"
-	helm template ../../sftp-server/ -f "${file}" --include-crds --namespace test-namespace > "../outputs/${file}"
+	for file in *yaml; do
+		echo "helm ${file}"
+		helm template ../../ -f "${file}" --include-crds --namespace test-namespace > "../outputs/${file}"
+	done
 done
