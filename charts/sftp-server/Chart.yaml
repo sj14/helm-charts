@@ -3,5 +3,5 @@ apiVersion: v2
 name: sftp-server
 description: A Helm chart for https://github.com/atmoz/sftp
 type: application
-version: 0.1.2
-sources: ["https://github.com/sj14/sftp-helm"]
+version: 0.1.3
+sources: ["https://github.com/sj14/helm-charts"]

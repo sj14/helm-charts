@@ -1,18 +1,18 @@
 # sftp-server
 
-![Version: 0.1.2](https://img.shields.io/badge/Version-0.1.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.1.3](https://img.shields.io/badge/Version-0.1.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 A Helm chart for https://github.com/atmoz/sftp
 
 ## Source Code
 
-* <https://github.com/sj14/sftp-helm>
+* <https://github.com/sj14/helm-charts>
 
 ## Installation
 
 ```console
-helm repo add sftp-helm https://sj14.github.io/sftp-helm
-helm upgrade sftp --install sftp-helm/sftp-server
+helm repo add sj14 https://sj14.github.io/helm-charts
+helm upgrade sftp --install sj14/sftp-server
 ```
 
 ## Values
