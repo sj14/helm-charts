@@ -1,6 +1,6 @@
 # sftp-server
 
-![Version: 0.1.3](https://img.shields.io/badge/Version-0.1.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.1.4](https://img.shields.io/badge/Version-0.1.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 A Helm chart for https://github.com/atmoz/sftp
 
@@ -24,8 +24,8 @@ helm upgrade sftp --install sj14/sftp-server
 | extraInitContainers | list | `[]` | Additional Init containers of the pod. |
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
-| image.repository | string | `"ghcr.io/atmoz/sftp/alpine@sha256"` |  |
-| image.tag | string | `"688d93138e4d8c1b6401c9d8be5ec4b6153bdce4a7322ce4d7349ba75b6845f8"` |  |
+| image.repository | string | `"ghcr.io/atmoz/sftp/alpine"` |  |
+| image.tag | string | `"latest"` |  |
 | imagePullSecrets | list | `[]` |  |
 | ingress.annotations | object | `{}` |  |
 | ingress.className | string | `""` |  |
