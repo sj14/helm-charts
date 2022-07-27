@@ -6,9 +6,9 @@
 replicaCount: 1
 
 image:
-  repository: ghcr.io/atmoz/sftp/alpine@sha256
+  repository: ghcr.io/atmoz/sftp/alpine
   pullPolicy: IfNotPresent
-  tag: "688d93138e4d8c1b6401c9d8be5ec4b6153bdce4a7322ce4d7349ba75b6845f8"  # build from 2022-06-10
+  tag: "latest"
 
 sftp:
   hostKeys:
