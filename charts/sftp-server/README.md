@@ -27,13 +27,6 @@ helm upgrade sftp --install sj14/sftp-server
 | image.repository | string | `"ghcr.io/atmoz/sftp/alpine"` |  |
 | image.tag | string | `"latest"` |  |
 | imagePullSecrets | list | `[]` |  |
-| ingress.annotations | object | `{}` |  |
-| ingress.className | string | `""` |  |
-| ingress.enabled | bool | `false` |  |
-| ingress.hosts[0].host | string | `"chart-example.local"` |  |
-| ingress.hosts[0].paths[0].path | string | `"/"` |  |
-| ingress.hosts[0].paths[0].pathType | string | `"ImplementationSpecific"` |  |
-| ingress.tls | list | `[]` |  |
 | nameOverride | string | `""` |  |
 | nodeSelector | object | `{}` |  |
 | persistentVolume.accessModes | list | `["ReadWriteOnce"]` | Must match those of existing PV or dynamic provisioner Ref: http://kubernetes.io/docs/user-guide/persistent-volumes/ |
