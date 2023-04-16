@@ -104,6 +104,8 @@ securityContext: {}
 service:
   type: ClusterIP
   port: 22
+  # -- When using the NodePort type and you want a fixed port
+  # nodePort: 30022 
 
 resources: {}
   # limits:

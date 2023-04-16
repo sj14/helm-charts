@@ -26,23 +26,6 @@ data:
   users.conf: |
     demo:demo:::upload
 ---
-# Source: sftp-server/templates/pvc.yaml
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: release-name-sftp-server
-  labels:
-    helm.sh/chart: sftp-server-0.1.5
-    app.kubernetes.io/name: sftp-server
-    app.kubernetes.io/instance: release-name
-    app.kubernetes.io/managed-by: Helm
-spec:
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: "8Gi"
----
 # Source: sftp-server/templates/service.yaml
 apiVersion: v1
 kind: Service
@@ -54,10 +37,11 @@ metadata:
     app.kubernetes.io/instance: release-name
     app.kubernetes.io/managed-by: Helm
 spec:
-  type: ClusterIP
+  type: NodePort
   ports:
-    - port: 22
+    - port: 222
       targetPort: ssh
+      nodePort: 30007
       protocol: TCP
       name: ssh
   selector:
@@ -115,9 +99,6 @@ spec:
           volumeMounts:
             - name: config-users
               mountPath: /etc/sftp/
-            - name: storage-volume
-              mountPath: "/home/demo"
-              subPath: "/demo"
       volumes:
       - name: config-users
         configMap:
@@ -126,6 +107,3 @@ spec:
         secret:
           secretName: release-name-sftp-server
           defaultMode: 0400
-      - name: storage-volume
-        persistentVolumeClaim:
-          claimName: release-name-sftp-server

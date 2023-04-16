@@ -1,0 +1,4 @@
+service:
+  type: NodePort
+  port: 222
+  nodePort: 30007
