@@ -44,6 +44,7 @@ helm upgrade sftp --install sj14/sftp-server
 | securityContext | object | `{}` |  |
 | service.port | int | `22` |  |
 | service.type | string | `"ClusterIP"` |  |
+| service.nodePort | int | `""` | Useful in case of a `service.type` with value `"NodePort"` |
 | serviceAccount.annotations | object | `{}` | Annotations to add to the service account |
 | serviceAccount.create | bool | `false` | Specifies whether a service account should be created |
 | serviceAccount.name | string | `""` | If not set and create is true, a name is generated using the fullname template |
