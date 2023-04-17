@@ -1,6 +1,6 @@
 # sftp-server
 
-![Version: 0.1.5](https://img.shields.io/badge/Version-0.1.5-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.1.6](https://img.shields.io/badge/Version-0.1.6-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 A Helm chart for https://github.com/atmoz/sftp
 
@@ -29,7 +29,7 @@ helm upgrade sftp --install sj14/sftp-server
 | imagePullSecrets | list | `[]` |  |
 | nameOverride | string | `""` |  |
 | nodeSelector | object | `{}` |  |
-| persistentVolume.accessModes | list | `["ReadWriteOnce"]` | Must match those of existing PV or dynamic provisioner Ref: http://kubernetes.io/docs/user-guide/persistent-volumes/ |
+| persistentVolume.accessModes | list | `["ReadWriteOnce"]` | Must match those of existing PV or dynamic provisioner ([Kubernetes docs](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes)) |
 | persistentVolume.annotations | object | `{}` |  |
 | persistentVolume.enabled | bool | `false` |  |
 | persistentVolume.existingClaim | string | `""` | If defined, PVC must be created manually before volume will be bound |
@@ -42,6 +42,7 @@ helm upgrade sftp --install sj14/sftp-server
 | replicaCount | int | `1` |  |
 | resources | object | `{}` |  |
 | securityContext | object | `{}` |  |
+| service.nodePort | int | `0` | When using the NodePort type, you can specify a fixed port ([Kubernetes docs](https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport)) |
 | service.port | int | `22` |  |
 | service.type | string | `"ClusterIP"` |  |
 | serviceAccount.annotations | object | `{}` | Annotations to add to the service account |
