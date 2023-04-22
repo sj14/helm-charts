@@ -120,3 +120,12 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+# Boolean to tell if the startupProbe should be enabled
+startupProbeEnabled: true
+
+# Boolean to tell if the livenessProbe should be enabled
+livenessProbeEnabled: true
+
+# Boolean to tell if the readinessProbe should be enabled
+readinessProbeEnabled: true
