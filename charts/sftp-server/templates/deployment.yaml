@@ -42,17 +42,17 @@ spec:
             - name: ssh
               containerPort: 22
               protocol: TCP
-          {{- if .Values.startupProbeEnabled }}
+          {{- if .Values.probes.startup }}
           startupProbe:
             tcpSocket:
               port: ssh
           {{- end }}
-          {{- if .Values.livenessProbeEnabled }}
+          {{- if .Values.probes.liveness }}
           livenessProbe:
             tcpSocket:
               port: ssh
           {{- end }}
-          {{- if .Values.readinessProbeEnabled }}
+          {{- if .Values.probes.readiness }}
           readinessProbe:
             tcpSocket:
               port: ssh

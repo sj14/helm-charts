@@ -39,6 +39,9 @@ helm upgrade sftp --install sj14/sftp-server
 | persistentVolume.volumeBindingMode | string | `nil` | If defined, volumeBindingMode: <volumeBindingMode> If undefined (the default) or set to null, no volumeBindingMode spec is   set, choosing the default mode.  |
 | podAnnotations | object | `{}` |  |
 | podSecurityContext | object | `{}` |  |
+| probes.liveness | bool | `true` | Enable liveness probe |
+| probes.readiness | bool | `true` | Enable readiness probe |
+| probes.startup | bool | `true` | Enable startup probe |
 | replicaCount | int | `1` |  |
 | resources | object | `{}` |  |
 | securityContext | object | `{}` |  |

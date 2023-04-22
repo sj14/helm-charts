@@ -121,11 +121,12 @@ tolerations: []
 
 affinity: {}
 
-# Boolean to tell if the startupProbe should be enabled
-startupProbeEnabled: true
+probes:
+  # -- Enable startup probe
+  startup: true
 
-# Boolean to tell if the livenessProbe should be enabled
-livenessProbeEnabled: true
+  # -- Enable liveness probe
+  liveness: true
 
-# Boolean to tell if the readinessProbe should be enabled
-readinessProbeEnabled: true
+  # -- Enable readiness probe
+  readiness: true
