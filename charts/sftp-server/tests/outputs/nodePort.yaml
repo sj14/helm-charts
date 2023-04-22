@@ -5,7 +5,7 @@ kind: Secret
 metadata:
   name: release-name-sftp-server
   labels:
-    helm.sh/chart: sftp-server-0.1.6
+    helm.sh/chart: sftp-server-0.2.0
     app.kubernetes.io/name: sftp-server
     app.kubernetes.io/instance: release-name
     app.kubernetes.io/managed-by: Helm
@@ -18,7 +18,7 @@ kind: ConfigMap
 metadata:
   name: release-name-sftp-server-users
   labels:
-    helm.sh/chart: sftp-server-0.1.6
+    helm.sh/chart: sftp-server-0.2.0
     app.kubernetes.io/name: sftp-server
     app.kubernetes.io/instance: release-name
     app.kubernetes.io/managed-by: Helm
@@ -32,7 +32,7 @@ kind: Service
 metadata:
   name: release-name-sftp-server
   labels:
-    helm.sh/chart: sftp-server-0.1.6
+    helm.sh/chart: sftp-server-0.2.0
     app.kubernetes.io/name: sftp-server
     app.kubernetes.io/instance: release-name
     app.kubernetes.io/managed-by: Helm
@@ -54,7 +54,7 @@ kind: Deployment
 metadata:
   name: release-name-sftp-server
   labels:
-    helm.sh/chart: sftp-server-0.1.6
+    helm.sh/chart: sftp-server-0.2.0
     app.kubernetes.io/name: sftp-server
     app.kubernetes.io/instance: release-name
     app.kubernetes.io/managed-by: Helm
@@ -67,9 +67,9 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/config-users: 6bbc4d589c1da00768e7301e591417961c38c697f478ff95b52de22b29d80b47
+        checksum/config-users: b1792c8890708854ad20942cc65894443287dff8822783451663c68ee4a45ef1
         checksum/config-keys: 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b
-        checksum/host-keys: a50a91c0dafb73d9e694de3fabcaf2ed1ac899e0789d24ef530ca21b812d15be
+        checksum/host-keys: bffff39d6a9357c9e2e0be4497835ba5677970a1f89b506c13c05b2ced702cce
       labels:
         app.kubernetes.io/name: sftp-server
         app.kubernetes.io/instance: release-name
@@ -88,6 +88,9 @@ spec:
             - name: ssh
               containerPort: 22
               protocol: TCP
+          startupProbe:
+            tcpSocket:
+              port: ssh
           livenessProbe:
             tcpSocket:
               port: ssh

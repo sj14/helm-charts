@@ -42,12 +42,21 @@ spec:
             - name: ssh
               containerPort: 22
               protocol: TCP
+          {{- if .Values.probes.startup }}
+          startupProbe:
+            tcpSocket:
+              port: ssh
+          {{- end }}
+          {{- if .Values.probes.liveness }}
           livenessProbe:
             tcpSocket:
               port: ssh
+          {{- end }}
+          {{- if .Values.probes.readiness }}
           readinessProbe:
             tcpSocket:
               port: ssh
+          {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
