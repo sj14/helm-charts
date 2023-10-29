@@ -124,9 +124,16 @@ affinity: {}
 probes:
   # -- Enable startup probe
   startup: true
-
   # -- Enable liveness probe
   liveness: true
-
   # -- Enable readiness probe
   readiness: true
+
+# -- Extra manifests to deploy as an array
+extraManifests: []
+  # - apiVersion: v1
+  #   kind: ConfigMap
+  #   metadata:
+  #     name: sftp-extra
+  #   data:
+  #     extra-data: "value"
