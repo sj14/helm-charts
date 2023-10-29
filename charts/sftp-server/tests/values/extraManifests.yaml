@@ -1,0 +1,13 @@
+extraManifests:
+  - apiVersion: v1
+    kind: ConfigMap
+    metadata:
+      name: sftp-extra-1
+    data:
+      extra-data-1: "value-1"
+  - apiVersion: v1
+    kind: ConfigMap
+    metadata:
+      name: sftp-extra-2
+    data:
+      extra-data-2: "value-2"
