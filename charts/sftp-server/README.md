@@ -1,6 +1,6 @@
 # sftp-server
 
-![Version: 0.3.0](https://img.shields.io/badge/Version-0.3.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.4.0](https://img.shields.io/badge/Version-0.4.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 A Helm chart for https://github.com/atmoz/sftp
 
@@ -23,6 +23,8 @@ helm upgrade sftp --install sj14/sftp-server
 | extraContainers | list | `[]` | Additional containers of the pod. |
 | extraInitContainers | list | `[]` | Additional Init containers of the pod. |
 | extraManifests | list | `[]` | Extra manifests to deploy as an array |
+| extraVolumeMounts | list | `[]` | Additional volume mounts of the pod. |
+| extraVolumes | list | `[]` | Additional volumes of the pod. |
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.repository | string | `"ghcr.io/atmoz/sftp/alpine"` |  |

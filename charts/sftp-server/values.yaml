@@ -34,6 +34,17 @@ extraInitContainers: []
 # -- Additional containers of the pod.
 extraContainers: []
 
+# -- Additional volumes of the pod.
+extraVolumes: []
+  # - name: my-config
+  #   configMap:
+  #     name: my-config
+
+# -- Additional volume mounts of the pod.
+extraVolumeMounts: []
+  # - name: my-config
+  #   mountPath: /my-config/
+
 persistentVolume:
   enabled: false
   # -- Must match those of existing PV or dynamic provisioner
