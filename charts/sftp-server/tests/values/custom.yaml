@@ -31,3 +31,12 @@ extraContainers:
 extraInitContainers:
   - name: nginx-init
     image: nginx
+
+extraVolumes:
+  - name: my-config
+    configMap:
+      name: my-config
+
+extraVolumeMounts:
+  - name: my-config
+    mountPath: /my-config/

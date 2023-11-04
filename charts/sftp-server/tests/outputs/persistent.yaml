@@ -5,7 +5,7 @@ kind: Secret
 metadata:
   name: release-name-sftp-server
   labels:
-    helm.sh/chart: sftp-server-0.3.0
+    helm.sh/chart: sftp-server-0.4.0
     app.kubernetes.io/name: sftp-server
     app.kubernetes.io/instance: release-name
     app.kubernetes.io/managed-by: Helm
@@ -18,7 +18,7 @@ kind: ConfigMap
 metadata:
   name: release-name-sftp-server-users
   labels:
-    helm.sh/chart: sftp-server-0.3.0
+    helm.sh/chart: sftp-server-0.4.0
     app.kubernetes.io/name: sftp-server
     app.kubernetes.io/instance: release-name
     app.kubernetes.io/managed-by: Helm
@@ -32,7 +32,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: release-name-sftp-server
   labels:
-    helm.sh/chart: sftp-server-0.3.0
+    helm.sh/chart: sftp-server-0.4.0
     app.kubernetes.io/name: sftp-server
     app.kubernetes.io/instance: release-name
     app.kubernetes.io/managed-by: Helm
@@ -49,7 +49,7 @@ kind: Service
 metadata:
   name: release-name-sftp-server
   labels:
-    helm.sh/chart: sftp-server-0.3.0
+    helm.sh/chart: sftp-server-0.4.0
     app.kubernetes.io/name: sftp-server
     app.kubernetes.io/instance: release-name
     app.kubernetes.io/managed-by: Helm
@@ -70,7 +70,7 @@ kind: Deployment
 metadata:
   name: release-name-sftp-server
   labels:
-    helm.sh/chart: sftp-server-0.3.0
+    helm.sh/chart: sftp-server-0.4.0
     app.kubernetes.io/name: sftp-server
     app.kubernetes.io/instance: release-name
     app.kubernetes.io/managed-by: Helm
@@ -83,9 +83,9 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/config-users: cabf7f70c16892bcdc352672054f706845c0113564723c49b8a21b79642327f5
+        checksum/config-users: b7cb831d259455af891a673ea7543c90307ac31d2ef7304214e343af8e1b3c8d
         checksum/config-keys: 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b
-        checksum/host-keys: 3fa79a9c0d8f37e339b006bd4cf874e7b4e33679d4ccb1b91ee09e465e6eac03
+        checksum/host-keys: 2166908d57f2081f9e0fcc911abe5befce1429adbfdc9d81545625df02735110
       labels:
         app.kubernetes.io/name: sftp-server
         app.kubernetes.io/instance: release-name

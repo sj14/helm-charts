@@ -60,6 +60,9 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
+            {{- if .Values.extraVolumeMounts }}
+              {{- toYaml .Values.extraVolumeMounts | nindent 12 }} 
+            {{- end }}
             - name: config-users
               mountPath: /etc/sftp/
             {{- if .Values.sftp.hostKeys.ed25519 }}
@@ -89,6 +92,9 @@ spec:
         {{- toYaml .Values.extraContainers | nindent 8 }}
       {{- end }}
       volumes:
+        {{- if .Values.extraVolumes }}
+          {{- toYaml .Values.extraVolumes | nindent 6 }} 
+        {{- end }}
       - name: config-users
         configMap:
           name: {{ include "sftp-server.fullname" . }}-users
