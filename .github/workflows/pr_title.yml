@@ -11,6 +11,6 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: "Check PR title"
-        uses: "Slashgear/action-check-pr-title@v3.0.0"
+        uses: "Slashgear/action-check-pr-title@v4.3.0"
         with:
           regexp: "^(CI|Utils|Common|SFTP|Deps): .+"
