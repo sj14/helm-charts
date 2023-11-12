@@ -9,9 +9,11 @@ updates:
     directory: "/" 
     schedule:
       interval: "daily"
-    prefix: Deps
+    commit-message:
+      prefix: Deps
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "daily"
-    prefix: Deps
+    commit-message:
+      prefix: Deps
