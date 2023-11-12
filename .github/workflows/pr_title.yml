@@ -13,4 +13,4 @@ jobs:
       - name: "Check PR title"
         uses: "Slashgear/action-check-pr-title@v3.0.0"
         with:
-          regexp: "^(CI|Utils|Common|SFTP): .+"
+          regexp: "^(CI|Utils|Common|SFTP|Deps): .+"
