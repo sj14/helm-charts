@@ -1,4 +1,4 @@
-module github.com/sj14/helm-charts
+module github.com/sj14/helm-charts/tools
 
 go 1.21.4
 
