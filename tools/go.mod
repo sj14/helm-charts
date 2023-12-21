@@ -3,7 +3,7 @@ module github.com/sj14/helm-charts/tools
 go 1.21.4
 
 require (
-	github.com/norwoodj/helm-docs v1.11.3
+	github.com/norwoodj/helm-docs v1.12.0
 	helm.sh/helm/v3 v3.13.3
 )
 
