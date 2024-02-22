@@ -4,7 +4,7 @@ go 1.21.4
 
 require (
 	github.com/norwoodj/helm-docs v1.12.0
-	helm.sh/helm/v3 v3.14.1
+	helm.sh/helm/v3 v3.14.2
 )
 
 require (
