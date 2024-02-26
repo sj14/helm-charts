@@ -1,9 +1,10 @@
 module github.com/sj14/helm-charts/tools
 
 go 1.21.4
+toolchain go1.22.0
 
 require (
-	github.com/norwoodj/helm-docs v1.12.0
+	github.com/norwoodj/helm-docs v1.13.0
 	helm.sh/helm/v3 v3.14.2
 )
 
