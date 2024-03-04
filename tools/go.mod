@@ -3,7 +3,7 @@ module github.com/sj14/helm-charts/tools
 go 1.22
 
 require (
-	github.com/norwoodj/helm-docs v1.13.0
+	github.com/norwoodj/helm-docs v1.13.1
 	helm.sh/helm/v3 v3.14.2
 )
 
@@ -126,7 +126,7 @@ require (
 	go.opentelemetry.io/otel/trace v1.24.0 // indirect
 	go.starlark.net v0.0.0-20240123142251-f86470692795 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
-	golang.org/x/crypto v0.19.0 // indirect
+	golang.org/x/crypto v0.20.0 // indirect
 	golang.org/x/exp v0.0.0-20240222234643-814bf88cf225 // indirect
 	golang.org/x/net v0.21.0 // indirect
 	golang.org/x/oauth2 v0.17.0 // indirect
