@@ -8,7 +8,18 @@ for dir in charts/*; do
 	cd "$dir/tests/values"
 
 	for file in *yaml; do
-		echo "./bin/helm ${file}"
-		helm template ../../ -f "${file}" --include-crds --namespace test-namespace > "../outputs/${file}"
+		echo "helm ${file}"
+		"${GOBIN}/helm" template ../../ -f "${file}" --include-crds --namespace test-namespace > "../outputs/${file}"
 	done
+	cd -
+done
+
+for dir in charts/*; do
+	cd "$dir/tests/outputs"
+
+	for file in *yaml; do
+		echo "kubeconform ${file}"
+		"${GOBIN}/kubeconform" -strict "${file}"
+	done
+	cd -
 done

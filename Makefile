@@ -9,7 +9,10 @@ go-mod-tidy:
 
 .PHONY: tests
 tests:
-	cd tools && go install helm.sh/helm/v3/cmd/helm
+	cd tools && \
+	go install \
+		helm.sh/helm/v3/cmd/helm \
+		github.com/yannh/kubeconform/cmd/kubeconform
 	./scripts/test.sh
 
 .PHONY: helm-docs
