@@ -48,6 +48,8 @@ helm upgrade sftp --install sj14/sftp-server
 | replicaCount | int | `1` |  |
 | resources | object | `{}` |  |
 | securityContext | object | `{}` |  |
+| service.externalTraffic.enabled | bool | `true` |  |
+| service.externalTraffic.policy | string | `"Local"` |  |
 | service.nodePort | int | `0` | When using the NodePort type, you can specify a fixed port ([Kubernetes docs](https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport)) |
 | service.port | int | `22` |  |
 | service.type | string | `"ClusterIP"` |  |
