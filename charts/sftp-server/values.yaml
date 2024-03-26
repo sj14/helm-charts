@@ -117,6 +117,9 @@ service:
   port: 22
   # -- When using the NodePort type, you can specify a fixed port ([Kubernetes docs](https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport))
   nodePort: 0 
+  externalTraffic:
+    enabled: true
+    policy: "Local"
 
 resources: {}
   # limits:
