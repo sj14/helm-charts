@@ -6,6 +6,9 @@ metadata:
     {{- include "sftp-server.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
+  {{- if $.Values.service.externalTraffic.enabled }}
+  externalTrafficPolicy: {{ .Values.service.externalTraffic.policy }}
+  {{- end }}
   ports:
     - port: {{ .Values.service.port }}
       targetPort: ssh
