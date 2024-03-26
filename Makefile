@@ -1,7 +1,11 @@
 export GOBIN=$(PWD)/bin
 
 .PHONY: all
-all: tests helm-docs
+all: go-mod-tidy tests helm-docs
+
+.PHONY: go-mod-tidy
+go-mod-tidy:
+	cd tools && go mod tidy
 
 .PHONY: tests
 tests:

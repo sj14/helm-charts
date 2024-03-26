@@ -1,6 +1,6 @@
 # sftp-server
 
-![Version: 0.4.0](https://img.shields.io/badge/Version-0.4.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.5.0](https://img.shields.io/badge/Version-0.5.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 A Helm chart for https://github.com/atmoz/sftp
 
@@ -48,8 +48,7 @@ helm upgrade sftp --install sj14/sftp-server
 | replicaCount | int | `1` |  |
 | resources | object | `{}` |  |
 | securityContext | object | `{}` |  |
-| service.externalTraffic.enabled | bool | `false` |  |
-| service.externalTraffic.policy | string | `"Local"` |  |
+| service.externalTraffic | [Kubernetes docs](https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip | `{"enabled":false,"policy":"Local"}` | ) |
 | service.nodePort | int | `0` | When using the NodePort type, you can specify a fixed port ([Kubernetes docs](https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport)) |
 | service.port | int | `22` |  |
 | service.type | string | `"ClusterIP"` |  |

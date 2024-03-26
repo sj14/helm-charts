@@ -40,3 +40,7 @@ extraVolumes:
 extraVolumeMounts:
   - name: my-config
     mountPath: /my-config/
+
+service:
+  externalTraffic:
+    enabled: true
