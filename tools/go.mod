@@ -4,6 +4,7 @@ go 1.22
 
 require (
 	github.com/norwoodj/helm-docs v1.13.1
+	github.com/yannh/kubeconform v0.6.4
 	helm.sh/helm/v3 v3.14.3
 )
 
@@ -107,6 +108,7 @@ require (
 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
 	github.com/sagikazarmark/locafero v0.4.0 // indirect
 	github.com/sagikazarmark/slog-shim v0.1.0 // indirect
+	github.com/santhosh-tekuri/jsonschema/v5 v5.3.1 // indirect
 	github.com/shopspring/decimal v1.3.1 // indirect
 	github.com/sirupsen/logrus v1.9.3 // indirect
 	github.com/sourcegraph/conc v0.3.0 // indirect
