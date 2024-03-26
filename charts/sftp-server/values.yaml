@@ -117,8 +117,8 @@ service:
   port: 22
   # -- When using the NodePort type, you can specify a fixed port ([Kubernetes docs](https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport))
   nodePort: 0 
-  # -- ([Kubernetes docs](https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip))
   externalTraffic:
+    # -- externalTrafficPolicy ([Kubernetes docs](https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip))
     enabled: false
     policy: "Local"
 
