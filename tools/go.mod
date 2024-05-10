@@ -4,7 +4,7 @@ go 1.22
 
 require (
 	github.com/norwoodj/helm-docs v1.13.1
-	github.com/yannh/kubeconform v0.6.4
+	github.com/yannh/kubeconform v0.6.6
 	helm.sh/helm/v3 v3.14.4
 )
 
