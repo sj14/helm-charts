@@ -5,7 +5,7 @@ go 1.22.3
 require (
 	github.com/norwoodj/helm-docs v1.13.1
 	github.com/yannh/kubeconform v0.6.6
-	helm.sh/helm/v3 v3.15.1
+	helm.sh/helm/v3 v3.15.2
 )
 
 require (
