@@ -3,7 +3,7 @@ module github.com/sj14/helm-charts/tools
 go 1.22.3
 
 require (
-	github.com/norwoodj/helm-docs v1.13.1
+	github.com/norwoodj/helm-docs v1.14.2
 	github.com/yannh/kubeconform v0.6.6
 	helm.sh/helm/v3 v3.15.2
 )
@@ -115,7 +115,7 @@ require (
 	github.com/sourcegraph/conc v0.3.0 // indirect
 	github.com/spf13/afero v1.11.0 // indirect
 	github.com/spf13/cast v1.6.0 // indirect
-	github.com/spf13/cobra v1.8.0 // indirect
+	github.com/spf13/cobra v1.8.1 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/spf13/viper v1.18.2 // indirect
 	github.com/subosito/gotenv v1.6.0 // indirect
@@ -153,7 +153,6 @@ require (
 	k8s.io/cli-runtime v0.30.1 // indirect
 	k8s.io/client-go v0.30.1 // indirect
 	k8s.io/component-base v0.30.1 // indirect
-	k8s.io/helm v2.17.0+incompatible // indirect
 	k8s.io/klog/v2 v2.120.1 // indirect
 	k8s.io/kube-openapi v0.0.0-20240430033511-f0e62f92d13f // indirect
 	k8s.io/kubectl v0.30.1 // indirect
