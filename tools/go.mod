@@ -4,7 +4,7 @@ go 1.22.3
 
 require (
 	github.com/norwoodj/helm-docs v1.14.2
-	github.com/yannh/kubeconform v0.6.6
+	github.com/yannh/kubeconform v0.6.7
 	helm.sh/helm/v3 v3.15.3
 )
 
@@ -65,7 +65,9 @@ require (
 	github.com/gosuri/uitable v0.0.4 // indirect
 	github.com/gregjones/httpcache v0.0.0-20190611155906-901d90724c79 // indirect
 	github.com/hashicorp/errwrap v1.1.0 // indirect
+	github.com/hashicorp/go-cleanhttp v0.5.2 // indirect
 	github.com/hashicorp/go-multierror v1.1.1 // indirect
+	github.com/hashicorp/go-retryablehttp v0.7.7 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
 	github.com/huandu/xstrings v1.4.0 // indirect
 	github.com/imdario/mergo v0.3.16 // indirect
