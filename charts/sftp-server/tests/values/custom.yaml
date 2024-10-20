@@ -1,7 +1,9 @@
 sftp:
   hostKeys:
-    ed25519: my_hostkey_ed25519
-    rsa: my_hostkey_rsa
+    ed25519:
+      key: my_hostkey_ed25519
+    rsa:
+      key: my_hostkey_rsa
   users:
     - name: demo
       pass: y4mM/Hhem9GPc

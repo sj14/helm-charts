@@ -102,7 +102,7 @@ spec:
       annotations:
         checksum/config-users: ab523107d8f79b31b2f0476ed36d7391a925e5e58c8851ac397f9b04af05a949
         checksum/config-keys: 475149e7390720ffaea0d969a3e82b3c4643bc5df34f23871c4cfc2f1b9e9c93
-        checksum/host-keys: 5cefd9c20ce1166ae5dd788a398c1fde72a7c21ab407caa110d86eff6bda6a7f
+        checksum/host-keys: b6234828d030e17dce4c10a021f7e894cc9605ebc195e55492037491670d6d43
       labels:
         app.kubernetes.io/name: sftp-server
         app.kubernetes.io/instance: release-name
