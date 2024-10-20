@@ -65,13 +65,21 @@ spec:
             {{- end }}
             - name: config-users
               mountPath: /etc/sftp/
-            {{- if .Values.sftp.hostKeys.ed25519 }}
+            {{- if .Values.sftp.hostKeys.ed25519.key }}
             - name: host-keys
               mountPath: /etc/ssh/ssh_host_ed25519_key
               subPath: ssh_host_ed25519_key
+            {{- else if .Values.sftp.hostKeys.ed25519.secretKeyRef }}
+            - name: host-key-ed25519
+              mountPath: /etc/ssh/ssh_host_ed25519_key
+              subPath: ssh_host_ed25519_key
             {{- end }}
-            {{- if .Values.sftp.hostKeys.rsa }}
+            {{- if .Values.sftp.hostKeys.rsa.key }}
             - name: host-keys
+              mountPath: /etc/ssh/ssh_host_rsa_key
+              subPath: ssh_host_rsa_key
+            {{- else if .Values.sftp.hostKeys.rsa.secretKeyRef }}
+            - name: host-key-rsa
               mountPath: /etc/ssh/ssh_host_rsa_key
               subPath: ssh_host_rsa_key
             {{- end }}
@@ -98,10 +106,22 @@ spec:
       - name: config-users
         configMap:
           name: {{ include "sftp-server.fullname" . }}-users
-      {{- if .Values.sftp.hostKeys }}
+      {{- if or .Values.sftp.hostKeys.ed25519.key .Values.sftp.hostKeys.rsa.key }}
       - name: host-keys
         secret:
           secretName: {{ include "sftp-server.fullname" $ }}
+          defaultMode: 0400
+      {{- end }}
+      {{- if .Values.sftp.hostKeys.ed25519.secretKeyRef }}
+      - name: host-key-ed25519
+        secret:
+          secretName: {{ .Values.sftp.hostKeys.ed25519.secretKeyRef }}
+          defaultMode: 0400
+      {{- end }}
+      {{- if .Values.sftp.hostKeys.rsa.secretKeyRef }}
+      - name: host-key-rsa
+        secret:
+          secretName: {{ .Values.sftp.hostKeys.rsa.secretKeyRef }}
           defaultMode: 0400
       {{- end }}
       {{- range $i, $user := .Values.sftp.users }}
