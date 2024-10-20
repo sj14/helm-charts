@@ -1,6 +1,6 @@
 # sftp-server
 
-![Version: 0.5.1](https://img.shields.io/badge/Version-0.5.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
+![Version: 0.5.2](https://img.shields.io/badge/Version-0.5.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square)
 
 A Helm chart for https://github.com/atmoz/sftp
 
@@ -50,10 +50,10 @@ helm upgrade sftp --install sj14/sftp-server
 | securityContext | object | `{}` |  |
 | service.externalTraffic.enabled | bool | `false` | externalTrafficPolicy ([Kubernetes docs](https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip)) |
 | service.externalTraffic.policy | string | `"Local"` |  |
+| service.loadBalancerIP | int | `0` | When using the LoadBalancer type. |
 | service.nodePort | int | `0` | When using the NodePort type, you can specify a fixed port ([Kubernetes docs](https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport)) |
 | service.port | int | `22` |  |
 | service.type | string | `"ClusterIP"` |  |
-| service.loadBalancerIP | int | `127.0.0.1` |  |
 | serviceAccount.annotations | object | `{}` | Annotations to add to the service account |
 | serviceAccount.create | bool | `false` | Specifies whether a service account should be created |
 | serviceAccount.name | string | `""` | If not set and create is true, a name is generated using the fullname template |
