@@ -12,10 +12,18 @@ image:
 
 sftp:
   hostKeys:
-    # -- private ED25519 host key
-    ed25519: ""
-    # -- private RSA host key
-    rsa: ""
+    # -- private ED25519 host key. Choose between adding the key itself or reference a already existing key.
+    ed25519:
+      # -- The plain key
+      key: ""
+      # -- Reference to and existing secret with an "ssh_host_ed25519_key" data key and base64 encrypted value.
+      secretKeyRef: ""
+    # -- private RSA host key. Choose between adding the key itself or reference a already existing key.
+    rsa:
+      # -- The plain key
+      key: ""
+      # -- Reference to and existing secret with an "ssh_host_rsa_key" data key and base64 encrypted value.
+      secretKeyRef: ""
   users:
     - name: demo
       pass: demo
