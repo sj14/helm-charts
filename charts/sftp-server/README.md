@@ -48,6 +48,7 @@ helm upgrade sftp --install sj14/sftp-server
 | replicaCount | int | `1` |  |
 | resources | object | `{}` |  |
 | securityContext | object | `{}` |  |
+| service.annotations | object | `{}` | Annotations to add to the service |
 | service.externalTraffic.enabled | bool | `false` | externalTrafficPolicy ([Kubernetes docs](https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip)) |
 | service.externalTraffic.policy | string | `"Local"` |  |
 | service.loadBalancerIP | int | `0` | When using the LoadBalancer type. |
