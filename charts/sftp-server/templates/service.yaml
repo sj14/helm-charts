@@ -4,10 +4,6 @@ metadata:
   name: {{ include "sftp-server.fullname" . }}
   labels:
     {{- include "sftp-server.labels" . | nindent 4 }}
-  {{- with .Values.service.annotations }}
-  annotations:
-    {{- toYaml . | nindent 4 }}
-  {{- end }}
 spec:
   type: {{ .Values.service.type }}
   {{- if $.Values.service.externalTraffic.enabled }}
