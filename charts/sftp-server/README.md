@@ -60,7 +60,7 @@ helm upgrade sftp --install sj14/sftp-server
 | sftp.hostKeys.ed25519 | string | `""` | private ED25519 host key |
 | sftp.hostKeys.rsa | string | `""` | private RSA host key |
 | sftp.users[0].dirs[0] | string | `"upload"` |  |
-| sftp.users[0].guid | string | `""` |  |
+| sftp.users[0].gid | string | `""` |  |
 | sftp.users[0].name | string | `"demo"` |  |
 | sftp.users[0].pass | string | `"demo"` |  |
 | sftp.users[0].passEncrypted | bool | `false` | password is encrypted ([doc](https://github.com/atmoz/sftp/blob/ffeb104beec76cc622abda34ee2132c790b5559c/README.md#encrypted-password)) |

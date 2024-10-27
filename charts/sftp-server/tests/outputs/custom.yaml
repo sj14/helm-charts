@@ -56,8 +56,8 @@ metadata:
     app.kubernetes.io/managed-by: Helm
 data:
   users.conf: |
-    demo:y4mM/Hhem9GPc:e:::upload
-    traffic:traffic:::data
+    demo:y4mM/Hhem9GPc:e:123:456:upload
+    traffic:traffic:789:543:data
 ---
 # Source: sftp-server/templates/service.yaml
 apiVersion: v1
@@ -100,7 +100,7 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/config-users: f9f82c74a6e25ec7df310a64db1fcbb8192154061e0fae281bf926a5ff2984b7
+        checksum/config-users: ec1b183a134c1443f55379c05ee2be53016f636229f666a6ba7602ef63e0fa97
         checksum/config-keys: 3f6457421cdab3ef4908255038aedb53f39dcafac7b45655f478e5ec28ebaa59
         checksum/host-keys: 2b9f255069fd8beca8e14b7088fdad66b3a629f3ed1c66233c3217f10db1d564
       labels:

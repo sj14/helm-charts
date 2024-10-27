@@ -6,8 +6,8 @@ sftp:
     - name: demo
       pass: y4mM/Hhem9GPc
       passEncrypted: true
-      uid: ""
-      guid: ""
+      uid: "123"
+      gid: "456"
       dirs:
         - upload
       pubKeys:
@@ -16,8 +16,8 @@ sftp:
     - name: traffic
       pass: traffic
       passEncrypted: false
-      uid: ""
-      guid: ""
+      uid: "789"
+      gid: "543"
       dirs:
         - data
       pubKeys:
