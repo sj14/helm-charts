@@ -82,7 +82,7 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/config-users: 7bc447073dfff7abd9fe232d378798af0927754fa6a9d2df7c3543648803cb69
+        checksum/config-users: f23637dd0a5aad45e6a8c892a9175ddbbcc08cd81b4484443f3df9ee634bc9bd
         checksum/config-keys: 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b
         checksum/host-keys: 8524913e8834faab931fc40b1c4a891868f54f97e459477cc44486db0d3f79ce
       labels:
