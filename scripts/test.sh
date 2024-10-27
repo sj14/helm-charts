@@ -5,6 +5,9 @@ set -o pipefail
 set -o errtrace
 
 for dir in charts/*; do
+	rm -R "$dir/tests/outputs/"
+	mkdir "$dir/tests/outputs/"
+	
 	cd "$dir/tests/values"
 
 	for file in *yaml; do

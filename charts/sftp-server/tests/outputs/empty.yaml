@@ -1,17 +1,4 @@
 ---
-# Source: sftp-server/templates/secret.yaml
-apiVersion: v1
-kind: Secret
-metadata:
-  name: release-name-sftp-server
-  labels:
-    helm.sh/chart: sftp-server-0.5.2
-    app.kubernetes.io/name: sftp-server
-    app.kubernetes.io/instance: release-name
-    app.kubernetes.io/managed-by: Helm
-type: Opaque
-data:
----
 # Source: sftp-server/templates/config-users.yaml
 apiVersion: v1
 kind: ConfigMap
@@ -68,7 +55,7 @@ spec:
       annotations:
         checksum/config-users: f23637dd0a5aad45e6a8c892a9175ddbbcc08cd81b4484443f3df9ee634bc9bd
         checksum/config-keys: 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b
-        checksum/host-keys: 8524913e8834faab931fc40b1c4a891868f54f97e459477cc44486db0d3f79ce
+        checksum/host-keys: 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b
       labels:
         app.kubernetes.io/name: sftp-server
         app.kubernetes.io/instance: release-name
@@ -105,7 +92,3 @@ spec:
       - name: config-users
         configMap:
           name: release-name-sftp-server-users
-      - name: host-keys
-        secret:
-          secretName: release-name-sftp-server
-          defaultMode: 0400

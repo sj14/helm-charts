@@ -58,8 +58,12 @@ helm upgrade sftp --install sj14/sftp-server
 | serviceAccount.annotations | object | `{}` | Annotations to add to the service account |
 | serviceAccount.create | bool | `false` | Specifies whether a service account should be created |
 | serviceAccount.name | string | `""` | If not set and create is true, a name is generated using the fullname template |
-| sftp.hostKeys.ed25519 | string | `""` | private ED25519 host key |
-| sftp.hostKeys.rsa | string | `""` | private RSA host key |
+| sftp.hostKeys.ed25519 | object | `{"key":"","secretKeyRef":""}` | private ED25519 host key. Choose between adding the key itself or reference a already existing key. |
+| sftp.hostKeys.ed25519.key | string | `""` | The plain key |
+| sftp.hostKeys.ed25519.secretKeyRef | string | `""` | Reference to and existing secret with an "ssh_host_ed25519_key" data key and base64 encrypted value. |
+| sftp.hostKeys.rsa | object | `{"key":"","secretKeyRef":""}` | private RSA host key. Choose between adding the key itself or reference a already existing key. |
+| sftp.hostKeys.rsa.key | string | `""` | The plain key |
+| sftp.hostKeys.rsa.secretKeyRef | string | `""` | Reference to and existing secret with an "ssh_host_rsa_key" data key and base64 encrypted value. |
 | sftp.users[0].dirs[0] | string | `"upload"` |  |
 | sftp.users[0].gid | string | `""` |  |
 | sftp.users[0].name | string | `"demo"` |  |
