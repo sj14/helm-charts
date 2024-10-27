@@ -8,7 +8,7 @@ on:
 
 jobs:
   check-pr-title:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - name: "Check PR title"
         uses: "Slashgear/action-check-pr-title@v4.3.0"
