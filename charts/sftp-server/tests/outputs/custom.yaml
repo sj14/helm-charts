@@ -69,6 +69,8 @@ metadata:
     app.kubernetes.io/name: sftp-server
     app.kubernetes.io/instance: release-name
     app.kubernetes.io/managed-by: Helm
+  annotations:
+    my: annotation
 spec:
   type: ClusterIP
   externalTrafficPolicy: Local

@@ -42,5 +42,7 @@ extraVolumeMounts:
     mountPath: /my-config/
 
 service:
+  annotations:
+    my: annotation
   externalTraffic:
     enabled: true
