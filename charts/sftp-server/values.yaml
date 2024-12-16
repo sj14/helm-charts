@@ -156,6 +156,12 @@ probes:
   # -- Enable readiness probe
   readiness: true
 
+#
+# ref: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#strategy
+# Can be set to RollingUpdate or Recreate
+updateStrategy:
+  type: RollingUpdate
+
 # -- Extra manifests to deploy as an array
 extraManifests: []
   # - apiVersion: v1

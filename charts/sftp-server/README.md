@@ -72,3 +72,4 @@ helm upgrade sftp --install sj14/sftp-server
 | sftp.users[0].pubKeys | list | `[]` | public user keys ([doc](https://github.com/atmoz/sftp/blob/ffeb104beec76cc622abda34ee2132c790b5559c/README.md#logging-in-with-ssh-keys)) |
 | sftp.users[0].uid | string | `""` |  |
 | tolerations | list | `[]` |  |
+| updateStrategy.type | string | `"RollingUpdate"` |  |
