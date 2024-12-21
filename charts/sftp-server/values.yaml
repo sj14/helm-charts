@@ -124,7 +124,7 @@ service:
   type: ClusterIP
   port: 22
   # -- When using the NodePort type, you can specify a fixed port ([Kubernetes docs](https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport))
-  nodePort: 0 
+  nodePort: 0
   # -- When using the LoadBalancer type.
   loadBalancerIP: 0
   externalTraffic:
@@ -156,11 +156,10 @@ probes:
   # -- Enable readiness probe
   readiness: true
 
-#
-# ref: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#strategy
-# Can be set to RollingUpdate or Recreate
+# -- Define strategy update of the deployment ([Kubernetes doc](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#strategy))
 updateStrategy:
   type: RollingUpdate
+  rollingUpdate: {}
 
 # -- Extra manifests to deploy as an array
 extraManifests: []
