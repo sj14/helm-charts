@@ -156,10 +156,9 @@ probes:
   # -- Enable readiness probe
   readiness: true
 
-# -- Define strategy update of the deployment ([Kubernetes doc](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#strategy))
+# -- Define strategy update of the deployment ([Kubernetes docs](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#strategy))
 updateStrategy:
   type: RollingUpdate
-  rollingUpdate: {}
 
 # -- Extra manifests to deploy as an array
 extraManifests: []

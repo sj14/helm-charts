@@ -51,7 +51,6 @@ spec:
       app.kubernetes.io/name: sftp-server
       app.kubernetes.io/instance: release-name
   strategy:
-    rollingUpdate: {}
     type: RollingUpdate
 
   template:
