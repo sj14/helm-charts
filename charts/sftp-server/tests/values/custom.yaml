@@ -48,3 +48,6 @@ service:
     my: annotation
   externalTraffic:
     enabled: true
+
+updateStrategy:
+  type: Recreate

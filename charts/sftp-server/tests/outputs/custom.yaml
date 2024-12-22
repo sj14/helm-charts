@@ -99,6 +99,9 @@ spec:
     matchLabels:
       app.kubernetes.io/name: sftp-server
       app.kubernetes.io/instance: release-name
+  strategy:
+    type: Recreate
+
   template:
     metadata:
       annotations:
