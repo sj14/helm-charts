@@ -1,3 +1,5 @@
+{{- $users := include "sftp-server.getUsers" . | fromYamlArray }}
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -87,14 +89,14 @@ spec:
               mountPath: /etc/ssh/ssh_host_rsa_key
               subPath: ssh_host_rsa_key
             {{- end }}
-            {{- range $i, $user := .Values.sftp.users }}
+            {{- range $i, $user := $users }}
             {{- if $user.pubKeys }}
             - name: config-auth-{{ $user.name }}
               mountPath: "/home/{{ $user.name }}/.ssh/keys"
             {{- end }}
             {{- end }}
             {{- if .Values.persistentVolume.enabled }}
-            {{- range $i, $user := .Values.sftp.users }}
+            {{- range $i, $user := $users }}
             - name: storage-volume
               mountPath: "/home/{{ $user.name }}"
               subPath: "{{ $.Values.persistentVolume.subPath }}/{{ $user.name }}"
@@ -128,7 +130,7 @@ spec:
           secretName: {{ .Values.sftp.hostKeys.rsa.secretKeyRef }}
           defaultMode: 0400
       {{- end }}
-      {{- range $i, $user := .Values.sftp.users }}
+      {{- range $i, $user := $users }}
       {{- if $user.pubKeys }}
       - name: config-auth-{{ $user.name }}
         configMap:

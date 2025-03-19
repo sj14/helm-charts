@@ -1,3 +1,5 @@
+{{- $users := include "sftp-server.getUsers" . | fromYamlArray }}
+
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -6,6 +8,6 @@ metadata:
     {{- include "sftp-server.labels" . | nindent 4 }}
 data:
   users.conf: |
-  {{- range $i, $user := .Values.sftp.users }}
+  {{- range $i, $user := $users }}
     {{ $user.name }}:{{ $user.pass }}:{{ if $user.passEncrypted }}e:{{ end }}{{ $user.uid}}:{{ $user.gid }}:{{ join "," $user.dirs }}
   {{- end }}

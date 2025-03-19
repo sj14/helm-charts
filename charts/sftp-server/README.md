@@ -64,6 +64,7 @@ helm upgrade sftp --install sj14/sftp-server
 | sftp.hostKeys.rsa | object | `{"key":"","secretKeyRef":""}` | private RSA host key. Choose between adding the key itself or reference a already existing key. |
 | sftp.hostKeys.rsa.key | string | `""` | The plain key |
 | sftp.hostKeys.rsa.secretKeyRef | string | `""` | Reference to and existing secret with an "ssh_host_rsa_key" data key and base64 encrypted value. |
+| sftp.usersSecret | string | `""` | Reference to and existing secret that provides users' configuration. If present takes precedence over `.Values.sftp.users` configuration, whose schema is expected to use within a `users.conf` key  |
 | sftp.users[0].dirs[0] | string | `"upload"` |  |
 | sftp.users[0].gid | string | `""` |  |
 | sftp.users[0].name | string | `"demo"` |  |
