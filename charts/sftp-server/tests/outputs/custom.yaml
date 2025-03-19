@@ -105,7 +105,7 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/config-users: 4d68f819641e6054bd3a67f943eb97d34b2bacee919283f8ad35bee4ae8a981d
+        checksum/config-users: 7a8ad06a1e1ae080a5e37b3371a2790f1b7f3547e46d0e3c1f19d3132f943500
         checksum/config-keys: d42cfc9ad6ef93a797358a6c230c2ddc615d49d472ecf24c99643698c4ae2e24
         checksum/host-keys: 571e3cdaf8cb09754004f517709fba317f1f8c046bae1ab6c36a3ffa299c1f33
       labels:
