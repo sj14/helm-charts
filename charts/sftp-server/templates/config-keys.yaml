@@ -1,4 +1,6 @@
-{{- range $i, $user := .Values.sftp.users }}
+{{- $users := include "sftp-server.getUsers" . | fromYamlArray }}
+
+{{- range $i, $user := $users }}
 {{- if $user.pubKeys }}
 ---
 apiVersion: v1

@@ -60,3 +60,20 @@ Create the name of the service account to use
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
 {{- end }}
+
+{{/*
+Get users from configuration
+*/}}
+{{- define "sftp-server.getUsers" -}}
+{{- $users := .Values.sftp.users }}
+{{- if .Values.sftp.usersSecret }}
+  {{- $secret := lookup "v1" "Secret" .Release.Namespace .Values.sftp.usersSecret -}}
+  {{- $secretKey := "users.conf" }}
+  {{- if and $secret (hasKey $secret "data") (hasKey $secret.data $secretKey) }}
+    {{- $users = fromYamlArray (index $secret.data $secretKey | b64dec) -}}
+  {{- else }}
+    {{- fail (printf "Secret '%s' does not exist or does not contain the expected key: %s" .Values.sftp.usersSecret $secretKey) }}
+  {{- end }}
+{{- end }}
+{{- $users | toYaml -}}
+{{- end }}

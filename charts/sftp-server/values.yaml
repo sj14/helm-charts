@@ -24,6 +24,13 @@ sftp:
       key: ""
       # -- Reference to and existing secret with an "ssh_host_rsa_key" data key and base64 encrypted value.
       secretKeyRef: ""
+
+  # -- Reference to and existing secret that provides users' configuration.
+  # If present takes precedence over `.Values.sftp.users` configuration,
+  # whose schema is expected to use within a `users.conf` key 
+  usersSecret: ""
+
+  # Array based configuration of users 
   users:
     - name: demo
       pass: demo
