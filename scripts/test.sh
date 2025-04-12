@@ -12,7 +12,7 @@ for dir in charts/*; do
 
 	for file in *yaml; do
 		echo "helm ${file}"
-		"${GOBIN}/helm" template ../../ -f "${file}" --include-crds --namespace test-namespace > "../outputs/${file}"
+		go tool helm.sh/helm/v3/cmd/helm template ../../ -f "${file}" --include-crds --namespace test-namespace > "../outputs/${file}"
 	done
 	cd -
 done
@@ -22,7 +22,7 @@ for dir in charts/*; do
 
 	for file in *yaml; do
 		echo "kubeconform ${file}"
-		"${GOBIN}/kubeconform" -strict "${file}"
+		go tool github.com/yannh/kubeconform/cmd/kubeconform -strict "${file}"
 	done
 	cd -
 done

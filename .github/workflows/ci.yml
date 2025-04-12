@@ -14,12 +14,9 @@ jobs:
         uses: actions/checkout@v4
       - uses: actions/setup-go@v5
         with:
-          go-version-file: "tools/go.mod"
-          cache-dependency-path: |
-            tools/go.sum
+          go-version-file: "go.mod"
       - name: Run go mod tidy
         run: |
-          cd tools
           go mod tidy
           git diff --exit-code
   tests:
@@ -29,9 +26,7 @@ jobs:
         uses: actions/checkout@v4
       - uses: actions/setup-go@v5
         with:
-          go-version-file: "tools/go.mod"
-          cache-dependency-path: |
-            tools/go.sum
+          go-version-file: "go.mod"
       - name: Perform Chart tests
         run: |
           make tests
@@ -43,9 +38,7 @@ jobs:
         uses: actions/checkout@v4
       - uses: actions/setup-go@v5
         with:
-          go-version-file: "tools/go.mod"
-          cache-dependency-path: |
-            tools/go.sum
+          go-version-file: "go.mod"
       - name: Generate Docs
         run: |
           make helm-docs
