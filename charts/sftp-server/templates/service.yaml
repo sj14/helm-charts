@@ -13,14 +13,14 @@ spec:
   {{- if $.Values.service.externalTraffic.enabled }}
   externalTrafficPolicy: {{ .Values.service.externalTraffic.policy }}
   {{- end }}
+  {{- if .Values.service.loadBalancerIP }}
+  loadBalancerIP: {{ .Values.service.loadBalancerIP }}
+  {{- end }}
   ports:
     - port: {{ .Values.service.port }}
       targetPort: ssh
       {{- if .Values.service.nodePort }}
       nodePort: {{ .Values.service.nodePort }}
-      {{- end }}
-      {{- if .Values.service.loadBalancerIP }}
-      loadBalancerIP: {{ .Values.service.loadBalancerIP }}
       {{- end }}
       protocol: TCP
       name: ssh
