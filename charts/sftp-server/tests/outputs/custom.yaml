@@ -5,7 +5,7 @@ kind: Secret
 metadata:
   name: release-name-sftp-server
   labels:
-    helm.sh/chart: sftp-server-0.8.0
+    helm.sh/chart: sftp-server-0.8.1
     app.kubernetes.io/name: sftp-server
     app.kubernetes.io/instance: release-name
     app.kubernetes.io/managed-by: Helm
@@ -20,7 +20,7 @@ kind: ConfigMap
 metadata:
   name: release-name-sftp-server-auth-demo
   labels:
-    helm.sh/chart: sftp-server-0.8.0
+    helm.sh/chart: sftp-server-0.8.1
     app.kubernetes.io/name: sftp-server
     app.kubernetes.io/instance: release-name
     app.kubernetes.io/managed-by: Helm
@@ -35,7 +35,7 @@ kind: ConfigMap
 metadata:
   name: release-name-sftp-server-auth-traffic
   labels:
-    helm.sh/chart: sftp-server-0.8.0
+    helm.sh/chart: sftp-server-0.8.1
     app.kubernetes.io/name: sftp-server
     app.kubernetes.io/instance: release-name
     app.kubernetes.io/managed-by: Helm
@@ -50,7 +50,7 @@ kind: ConfigMap
 metadata:
   name: release-name-sftp-server-users
   labels:
-    helm.sh/chart: sftp-server-0.8.0
+    helm.sh/chart: sftp-server-0.8.1
     app.kubernetes.io/name: sftp-server
     app.kubernetes.io/instance: release-name
     app.kubernetes.io/managed-by: Helm
@@ -65,7 +65,7 @@ kind: Service
 metadata:
   name: release-name-sftp-server
   labels:
-    helm.sh/chart: sftp-server-0.8.0
+    helm.sh/chart: sftp-server-0.8.1
     app.kubernetes.io/name: sftp-server
     app.kubernetes.io/instance: release-name
     app.kubernetes.io/managed-by: Helm
@@ -89,7 +89,7 @@ kind: Deployment
 metadata:
   name: release-name-sftp-server
   labels:
-    helm.sh/chart: sftp-server-0.8.0
+    helm.sh/chart: sftp-server-0.8.1
     app.kubernetes.io/name: sftp-server
     app.kubernetes.io/instance: release-name
     app.kubernetes.io/managed-by: Helm
@@ -105,9 +105,9 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/config-users: e7d7445ed1eceaf7c68679d53b68f76afb263e7c73531ec488dd37224430ec3e
-        checksum/config-keys: 94ae2f3fbb83c4b2739b3518e28cab1da2ddd3239d611ea176d087ed72f2050d
-        checksum/host-keys: 5ef69ecc6b63ccbfeb3e6b1b6741e5febc6cb73d196d22c4e5f3a421a30300a0
+        checksum/config-users: dae9d6c0b5433bc8ae059202f62c571e7c44ac1e13fb80dcb3153cc89a361362
+        checksum/config-keys: 5464030adb5e7c682406a966b9de6670dd44470c87339654dc861fb8421ae6e3
+        checksum/host-keys: 40ce898ed4a8cd01daa93faae0669c50ab8839a009e184cd85b449f3227f2a23
       labels:
         app.kubernetes.io/name: sftp-server
         app.kubernetes.io/instance: release-name
